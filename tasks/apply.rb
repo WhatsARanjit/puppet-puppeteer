@@ -1,6 +1,5 @@
 #!/opt/puppetlabs/puppet/bin/ruby
 require 'puppet/application/apply'
-require 'pry'
 
 Puppet.initialize_settings
 # https://github.com/puppetlabs/puppet/blob/master/lib/puppet/util/log/destinations.rb#L100
