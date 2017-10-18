@@ -1,4 +1,4 @@
-# node_manager
+# Puppeteer
 
 #### Table of Contents
 
