@@ -1,0 +1,57 @@
+{
+  "name": "WhatsARanjit-puppeteer",
+  "version": "0.1.0",
+  "author": "WhatsARanjit",
+  "summary": "Run puppet apply code as PE tasks",
+  "license": "Apache-2.0",
+  "source": "https://github.com/WhatsARanjit/puppet-puppeteer",
+  "project_page": "https://github.com/WhatsARanjit/puppet-puppeteer",
+  "issues_url": "https://github.com/WhatsARanjit/puppet-puppeteer/issues",
+  "tags": [
+    "PE",
+    "puppet enterprise",
+    "tasks",
+    "apply",
+    "masterless"
+  ],
+  "dependencies": [],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "SLES",
+      "operatingsystemrelease": [
+        "11",
+        "12"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "10.04",
+        "12.04",
+        "14.04",
+        "16.06"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.7.1 < 5.0.0"
+    }
+  ],
+  "description": "Puppeteer module"
+}

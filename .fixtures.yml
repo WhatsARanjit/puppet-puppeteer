@@ -1,0 +1,4 @@
+---
+fixtures:
+  symlinks:
+    puppeteer: "#{source_dir}"

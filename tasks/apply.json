@@ -1,0 +1,15 @@
+{
+  "summary": "Run a puppet apply on agents",
+  "input_method": "stdin",
+  "supports_noop": true,
+  "parameters": {
+    "code": {
+      "description": "Puppet DSL to run",
+      "type": "Optional[String[1]]"
+    },
+    "manifest": {
+      "description": "Path to a manifest on disk",
+      "type": "Optional[String[1]]"
+    }
+  }
+}
