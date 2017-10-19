@@ -9,7 +9,7 @@
 
 ## Overview
 
-Run puppet apply as a PE task
+A variety of tasks using Puppet.
 
 ## Tasks
 

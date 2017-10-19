@@ -2,7 +2,7 @@
   "name": "WhatsARanjit-puppeteer",
   "version": "0.1.2",
   "author": "WhatsARanjit",
-  "summary": "Run puppet apply code as PE tasks",
+  "summary": "A variety of tasks using Puppet.",
   "license": "Apache-2.0",
   "source": "https://github.com/WhatsARanjit/puppet-puppeteer",
   "project_page": "https://github.com/WhatsARanjit/puppet-puppeteer",
