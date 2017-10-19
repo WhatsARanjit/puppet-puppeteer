@@ -1,0 +1,22 @@
+{
+  "summary": "Add or update external facts on agents",
+  "input_method": "stdin",
+  "parameters": {
+    "fact": {
+      "description": "Name of the fact to add or update",
+      "type": "String[1]"
+    },
+    "value": {
+      "description": "The value to set or update the fact to",
+      "type": "Optional[String[1]]"
+    },
+    "file": {
+      "description": "The external fact file to use for the fact",
+      "type": "Optional[String[1]]"
+    },
+    "remove": {
+      "description": "Whether or not to remove the fact",
+      "type": "Optional[Enum['true', 'false']]"
+    }
+  }
+}

@@ -23,7 +23,6 @@ end
 def puppet_apply(pp, dsl)
   pp.handle_logdest_arg(tmp_log)
   pp.options[:code] = dsl
-  #pp.options[:noop] = true
   pp.main
 end
 

@@ -1,6 +1,6 @@
 {
   "name": "WhatsARanjit-puppeteer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "WhatsARanjit",
   "summary": "Run puppet apply code as PE tasks",
   "license": "Apache-2.0",
