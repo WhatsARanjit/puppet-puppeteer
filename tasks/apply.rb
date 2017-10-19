@@ -1,5 +1,6 @@
 #!/opt/puppetlabs/puppet/bin/ruby
 require 'puppet/application/apply'
+require 'tempfile'
 
 Puppet.initialize_settings
 # https://github.com/puppetlabs/puppet/blob/master/lib/puppet/util/log/destinations.rb#L100
@@ -10,18 +11,17 @@ Puppet.settings[:group] = '0'
 # Catch the apply()'s exit
 at_exit do
   begin
-    puts File.read(tmp_log)
-    File.delete(tmp_log)
+    puts File.read(@tmp_log.path)
+    @tmp_log.unlink
+    #File.delete(tmp_log)
   rescue Errno::ENOENT => e
   end
 end
 
-def tmp_log
-  File.join(Puppet.settings[:vardir], 'puppeteer_apply.log')
-end
+@tmp_log = Tempfile.new('puppeteer_apply')
 
 def puppet_apply(pp, dsl)
-  pp.handle_logdest_arg(tmp_log)
+  pp.handle_logdest_arg(@tmp_log.path)
   pp.options[:code] = dsl
   pp.main
 end
