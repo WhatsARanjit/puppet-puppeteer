@@ -139,11 +139,11 @@ class Externalfacts
   end
 
   def factsd_dir
-    "#{facter_dir}/facts.d"
+    File.join(facter_dir, 'facts.d')
   end
 
   def factsd_file
-    "#{factsd_dir}/#{@file}"
+    File.join(factsd_dir, @file)
   end
 end
 
