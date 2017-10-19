@@ -14,9 +14,9 @@
       "description": "The external fact file to use for the fact",
       "type": "Optional[String[1]]"
     },
-    "remove": {
+    "action": {
       "description": "Whether or not to remove the fact",
-      "type": "Optional[Enum['true', 'false']]"
+      "type": "Optional[Enum['add', 'remove']]"
     }
   }
 }

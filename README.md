@@ -18,13 +18,13 @@ A variety of tasks using Puppet.
 Run inline Puppet code
 
 ```shell
-# puppet task run puppeteer::apply --nodes 'node1'  code='notify { $fqdn: }'
+puppet task run puppeteer::apply --nodes 'node1'  code='notify { $fqdn: }'
 ```
 
 Run Puppet code from a manifest in noop mode
 
 ```shell
-# puppet task run puppeteer::apply --nodes 'node1'  manifest='/tmp/fqdn.pp' --noop
+puppet task run puppeteer::apply --nodes 'node1'  manifest='/tmp/fqdn.pp' --noop
 ```
 ### puppeteer::external_fact
 
@@ -33,6 +33,8 @@ Create a datacenter fact in datacenter.txt
 ```shell
 puppet task run puppeteer::external_fact --nodes 'node1' fact=datacenter value=us-east
 ```
+
+__NOTE:__ If no file is specified, $fact.txt is used.
 
 Create a role fact in server.yaml
 
@@ -43,7 +45,7 @@ puppet task run puppeteer::external_fact --nodes 'node1' fact=role value=default
 Remove an existing fact from config.json
 
 ```shell
-puppet task run puppeteer::external_fact --nodes 'node1' fact=repo_server remove=true file=config.json
+puppet task run puppeteer::external_fact --nodes 'node1' fact=repo_server action=remove file=config.json
 ```
 
 __NOTE__: Keys will be overwritten, not merged.

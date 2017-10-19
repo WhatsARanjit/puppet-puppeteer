@@ -3,11 +3,11 @@ require 'puppet'
 
 class Externalfacts
 
-  def initialize(fact, value, file, remove)
+  def initialize(fact, value, file, action)
     @fact   = fact
     @value  = value
     @file   = file
-    @remove = remove
+    @action = action
     @status = 'error'
     @cache  = Hash.new
     @output = ''
@@ -30,7 +30,7 @@ class Externalfacts
 
   def adjust_hash
     # If remove is specified, remove fact instead of adding
-    if @remove
+    if @action == 'remove'
       @cache.delete(@fact)
     else
       @cache[@fact] = @value
@@ -42,7 +42,7 @@ class Externalfacts
   end
 
   def update_status
-    if fact_exist? or @remove
+    if fact_exist? or @action == 'remove'
       @status = 'changed'   if @cache[@fact] != @value
       @status = 'unchanged' if @cache[@fact] == @value
     else
@@ -153,20 +153,20 @@ params = JSON.parse(STDIN.read)
 #  'fact'   => ARGV[0],
 #  'value'  => ARGV[1],
 #  'file'   => "#{ARGV[0]}.yaml",
-#  'remove' => true,
+#  'action' => true,
 #}
 fact   = params['fact']
 value  = params['value']
 file   = params['file']   || "#{fact}.txt"
-remove = params['remove'] || false
+action = params['action'] || 'add'
 
 raise 'Incorrect arguments provided' unless (
-  ( fact and !value and remove ) or # remove a value
-  ( fact and value and !remove )    # add a value
+  ( fact and !value and action == 'remove' ) or # remove a value
+  ( fact and  value and action == 'add' )       # add a value
 )
 
 begin
-  extfact = Externalfacts.new(fact, value, file, remove)
+  extfact = Externalfacts.new(fact, value, file, action)
   puts(extfact.output.to_json)
   exit 0
 rescue Puppet::Error => e
