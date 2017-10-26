@@ -138,3 +138,5 @@ Look up the providers for a given type.
 ```shell
 puppet task run puppeteer::providers --nodes 'node1' type=user
 ```
+
+__Contributed by:__ [Laura Macchi](https://github.com/LMacch)
