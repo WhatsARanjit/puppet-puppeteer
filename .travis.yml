@@ -12,7 +12,7 @@ matrix:
     dist: trusty
     env:
       - BEAKER_set=docker/centos-7
-      - BEAKER_debug=yes
+      #- BEAKER_debug=yes
     script: bundle exec rake beaker
     services: docker
     sudo: required

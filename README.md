@@ -6,6 +6,8 @@
 1. [Tasks](#tasks)
     * [puppeteer::apply](#puppeteerapply)
     * [puppeteer::external_fact](#puppeteerexternal_fact)
+    * [puppeteer::features](#puppeteerfeatures)
+    * [puppeteer::providers](#puppeteerproviders)
 
 ## Overview
 
@@ -26,6 +28,7 @@ Run Puppet code from a manifest in noop mode
 ```shell
 puppet task run puppeteer::apply --nodes 'node1'  manifest='/tmp/fqdn.pp' --noop
 ```
+
 ### puppeteer::external_fact
 
 Create a datacenter fact in datacenter.txt
@@ -49,3 +52,19 @@ puppet task run puppeteer::external_fact --nodes 'node1' fact=repo_server action
 ```
 
 __NOTE__: Keys will be overwritten, not merged.
+
+### puppeteer::features
+
+Look up the Puppet features on each system.
+
+```shell
+puppet task run puppeteer::features --nodes 'node1'
+```
+
+### puppeteer::providers
+
+Look up the providers for a given type.
+
+```shell
+puppet task run puppeteer::providers --nodes 'node1' type=user
+```

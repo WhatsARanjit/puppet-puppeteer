@@ -7,12 +7,6 @@ def run_puppet_access_login(user:, password: 'puppetlabs', lifetime: '5y')
 end
 
 def run_puppet_task(task_name:, params: nil)
-  #cmd_array = [
-  #  'rm nohup.out',
-  #  "nohup /opt/puppetlabs/bin/puppet-task run #{task_name} --nodes #{fact_on(default, 'fqdn')} #{params.to_s}",
-  #  'cat nohup.out',
-  #]
-  #on(master, cmd_array.join(';'), acceptable_exit_codes: [0, 1]).stdout
   on(master, puppet('task', 'run', task_name, '--nodes', fact_on(default, 'fqdn'), params.to_s), acceptable_exit_codes: [0, 1]).stdout
 end
 
@@ -33,7 +27,6 @@ def clear_env_cache(host)
   ]
   on(host, "#{cmd_array.join(' ')}")
 end
-
 
 RSpec.configure do |c|
   # Readable test descriptions
@@ -58,7 +51,6 @@ hosts.each do |host|
   if host['roles'].include?('master')
     install_pe_on(host, pe_opts)
     run_puppet_access_login(user: 'admin')
-    #on(master, puppet('code', 'deploy', 'production', '--wait'))
     install_module_on(host)
     clear_env_cache(host)
   else

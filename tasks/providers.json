@@ -1,0 +1,10 @@
+{
+  "summary": "Query the node for what providers are available",
+  "input_method": "stdin",
+  "parameters": {
+    "type": {
+      "description": "The resource type you are interested in.",
+      "type": "String[1]"
+    }
+  }
+}
