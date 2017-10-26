@@ -1,0 +1,14 @@
+{
+  "summary": "Grab certificate information on agent",
+  "input_method": "stdin",
+  "parameters": {
+    "threshold": {
+      "description" : "Checking for certs that expire before this far from now.",
+      "type": "Optional[String[1]]"
+    },
+    "fail": {
+      "description" : "If a cert is found due to expire, whether to treat as failure.",
+      "type": "Optional[Enum['fail', 'no_fail']]"
+    }
+  }
+}
