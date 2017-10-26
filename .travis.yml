@@ -1,0 +1,20 @@
+---
+sudo: false
+language: ruby
+cache: bundler
+script: "bundle exec rake release_checks"
+before_install:
+  - gem update bundler
+matrix:
+  fast_finish: true
+  include:
+  - rvm: 2.3.1
+    dist: trusty
+    env:
+      - BEAKER_set=docker/centos-7
+      - BEAKER_debug=yes
+    script: bundle exec rake beaker
+    services: docker
+    sudo: required
+notifications:
+  email: false

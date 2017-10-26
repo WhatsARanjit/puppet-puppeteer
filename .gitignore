@@ -2,6 +2,6 @@
 Gemfile.lock
 spec/fixtures/
 pkg/*
-*.travis*
 *.old
 checksums.json
+nohup.out
