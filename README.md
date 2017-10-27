@@ -122,7 +122,8 @@ expires : 2022-10-03 18:30:27 UTC
 subject : node1
 tte_raw : 156270228.94399956
 threshold : Expiring before 6y!
-=======
+```
+
 ### puppeteer::features
 
 Look up the Puppet features on each system.
