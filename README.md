@@ -139,4 +139,4 @@ Look up the providers for a given type.
 puppet task run puppeteer::providers --nodes 'node1' type=user
 ```
 
-__Contributed by:__ [Laura Macchi](https://github.com/LMacch)
+__Contributed by:__ [Laura Macchi](https://github.com/LMacchi)
