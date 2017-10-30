@@ -9,6 +9,7 @@
     * [puppeteer::certificate_info](#puppeteercertificate_info)
     * [puppeteer::features](#puppeteerfeatures)
     * [puppeteer::providers](#puppeteerproviders)
+    * [puppeteer::config](#puppeteerconfig)
 
 ## Overview
 
@@ -141,3 +142,23 @@ puppet task run puppeteer::providers --nodes 'node1' type=user
 ```
 
 __Contributed by:__ [Laura Macchi](https://github.com/LMacchi)
+
+### puppeteer::config
+
+Look up the value of a setting in the `[main]` section of puppet.conf
+
+```shell
+puppet task run puppeteer::config --nodes 'node1' setting=certname
+```
+
+Look up the value of a setting in the `[agent]` section of puppet.conf
+
+```shell
+puppet task run puppeteer::config --nodes 'node1' setting=server section=agent
+```
+
+Set the value of a setting in the `[agent]` section of puppet.conf, in noop mode
+
+```shell
+puppet task run puppeteer::config --nodes 'node1' setting=server section=agent value=puppet --noop
+```

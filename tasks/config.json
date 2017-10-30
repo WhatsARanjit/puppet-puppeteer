@@ -1,0 +1,19 @@
+{
+  "summary": "Manage puppet.conf values",
+  "input_method": "stdin",
+  "supports_noop": true,
+  "parameters": {
+    "setting": {
+      "description": "The name of the setting to be defined.",
+      "type": "String[1]"
+    },
+    "value": {
+      "description": "The value of the setting to be defined.",
+      "type": "Optional[String[1]]"
+    },
+    "section": {
+      "description": "The name of the section in which the setting should be defined.",
+      "type": "Optional[String[1]]"
+    }
+  }
+}
