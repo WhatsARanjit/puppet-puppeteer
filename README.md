@@ -9,6 +9,8 @@
     * [puppeteer::certificate_info](#puppeteercertificate_info)
     * [puppeteer::features](#puppeteerfeatures)
     * [puppeteer::providers](#puppeteerproviders)
+    * [puppeteer::classfile](#puppeteerclassfile)
+    * [puppeteer::resources](#puppeteerresources)
 
 ## Overview
 
@@ -141,3 +143,19 @@ puppet task run puppeteer::providers --nodes 'node1' type=user
 ```
 
 __Contributed by:__ [Laura Macchi](https://github.com/LMacchi)
+
+### puppeteer::classfile
+
+Look up all applied classes from last Puppet agent run (classfile.txt).
+
+```shell
+puppet task run puppeteer::classfile --nodes 'node1'
+```
+
+### puppeteer::resources
+
+Look up all managed resources from last Puppet agent run (resources.txt).
+
+```shell
+puppet task run puppeteer::resources --nodes 'node1'
+```

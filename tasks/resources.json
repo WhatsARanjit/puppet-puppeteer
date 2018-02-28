@@ -1,0 +1,4 @@
+{
+  "summary": "Query the node for all resources applied on last run",
+  "input_method": "stdin"
+}
