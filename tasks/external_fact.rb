@@ -6,7 +6,7 @@ class Externalfacts
   def initialize(fact, value, file, action)
     @fact   = fact
     @value  = value
-    @file   = file
+    @file   = File.basename(file)
     @action = action
     @status = 'error'
     @cache  = Hash.new
