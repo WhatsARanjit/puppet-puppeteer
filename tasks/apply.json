@@ -10,6 +10,10 @@
     "manifest": {
       "description": "Path to a manifest on disk",
       "type": "Optional[String[1]]"
+    },
+    "modulepath": {
+      "description": "Colon-separated modulepaths on agent",
+      "type": "Optional[String[1]]"
     }
   }
 }

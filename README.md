@@ -32,6 +32,12 @@ Run Puppet code from a manifest in noop mode
 puppet task run puppeteer::apply --nodes 'node1'  manifest='/tmp/fqdn.pp' --noop
 ```
 
+Run inline Puppet code with custom modulepath on agent
+
+```shell
+puppet task run puppeteer::apply --nodes 'node1'  code='notify { $settings::modulepath: }' modulepath='/path/to/custom'
+```
+
 ### puppeteer::external_fact
 
 Create a datacenter fact in datacenter.txt

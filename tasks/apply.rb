@@ -31,6 +31,9 @@ code     = params['code']
 manifest = params['manifest']
 noop     = params['_noop']
 
+# Set modulepath if given
+Puppet.settings[:modulepath] = params['modulepath'] if params.key?('modulepath')
+
 raise 'Please specify either \'code\' or \'manifest\' option' if ( code and manifest )
 
 Puppet.settings[:noop] = true if noop
