@@ -11,6 +11,7 @@
     * [puppeteer::providers](#puppeteerproviders)
     * [puppeteer::classfile](#puppeteerclassfile)
     * [puppeteer::resources](#puppeteerresources)
+    * [puppeteer::env_cache](#puppeteerenv_cache)
 
 ## Overview
 
@@ -164,4 +165,12 @@ Look up all managed resources from last Puppet agent run (resources.txt).
 
 ```shell
 puppet task run puppeteer::resources --nodes 'node1'
+```
+
+### puppeteer::env_cache
+
+Clear environment cache.
+
+```shell
+puppet task run puppeteer::env_cache --nodes 'node1' environment=production
 ```

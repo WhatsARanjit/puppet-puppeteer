@@ -1,0 +1,10 @@
+{
+  "summary": "Clear puppetserver environment cache",
+  "input_method": "stdin",
+  "parameters": {
+    "environment": {
+      "description": "Environment to be cleared",
+      "type": "Optional[String[1]]"
+    }
+  }
+}
